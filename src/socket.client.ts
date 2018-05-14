@@ -6,18 +6,22 @@ export class SocketClient {
     public io;
     public sent: number = 0;
 
-    constructor() {
-        this.io = client('http://localhost:3000');
+    constructor(ip) {
+        this.io = client(ip);
         this.init();
     }
 
     public init(): void {
         this.io.on('connect', (socket) => {
-            console.log('client connected');
+            // debug('client connected: %o', socket.id);
         })
         this.io.on('fromApi', (data) => {
             console.log(data);
         })
+    }
+
+    public sendToServer(emit: string, data: any) {
+        this.io.emit(emit, data);
     }
 
     public test(): void {

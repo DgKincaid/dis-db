@@ -16,10 +16,13 @@ export class SocketServer {
     public init(): void {
 
         this.io.on('connect', (socket: any) => {
-            debug('Client connected');
+            debug('Client connected: %o', socket.id);
+
+            socket.on('identity', (self) => {
+                debug('identity: %o', self);
+            })
 
             socket.on('disconnect', () => {
-
                 debug('Client disconnected %o', this.requests)
             });
 

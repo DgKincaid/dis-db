@@ -2,9 +2,9 @@ import { SocketClient } from './src/socket.client';
 
 import * as rp from 'request-promise';
 
-const client = new SocketClient();
+// const client = new SocketClient();
 
-client.test();
+// client.test();
 
 function test(): void {
     let interval;
