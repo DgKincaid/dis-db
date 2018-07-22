@@ -2,6 +2,8 @@ import * as socketIo from 'socket.io';
 
 import { Server } from 'http';
 
+import NodeServer from './node.server';
+
 const debug = require('debug')('distro:socket.server');
 
 export class SocketServer {
@@ -20,6 +22,8 @@ export class SocketServer {
 
             socket.on('identity', (self) => {
                 debug('identity: %o', self);
+
+                
             })
 
             socket.on('disconnect', () => {

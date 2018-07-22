@@ -3,7 +3,7 @@ export class NodeServer {
 
     public nodeList: Array<any>;
 
-    public constructor() {
+    constructor() {
         this.nodeList = new Array();
     }
 
